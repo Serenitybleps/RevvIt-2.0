@@ -10,8 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var promptRandom = ""
+    @State private var name = ""
     
-        let prompts = ["Talk About the World", "Spend 15 minutes talking about turtles", "talk about your childhood home", "why did you open the app", "are you going to see the new barbie movie", "chicken"
+        let prompts = ["Talk About the World", "Spend 15 minutes talking about turtles", "talk about your childhood home", "why did you open the app", "are you going to see the new barbie movie", "chicken sandwich"
                     
     ]
 
@@ -23,54 +24,96 @@ struct ContentView: View {
           
             Color(hex: "#F6EFE8")
                 .ignoresSafeArea()
-         
+
+                
             
-         
-            
-            
-            VStack {
+            VStack  {
+                
+               
+                    
                 
                 Text("Journal")
-                    .multilineTextAlignment(.leading)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    
                 
+  
 
                 
-                Button("New Prompt") {
+                VStack  {
                     
                     
-                    let random = Int.random (in:1..<6)
-                    let prompt = prompts[random]
-                    promptRandom = prompt
-            
+                    
+                    
+                    Button("New Prompt"){
+                        
+                        
+                        let random = Int.random (in:1..<6)
+                        let prompt = prompts[random]
+                        promptRandom = prompt
+                        
+                        
+                    }//button
+                    .foregroundColor(.black)
+                    .bold()
+                    
+                    Spacer()
+                    
+                    VStack (alignment: .leading)
+                    {
+                        Text (promptRandom)
+                    }
+                    
 
-                    
-                } //button
-                Text (promptRandom)
+                }
+                .fixedSize(horizontal: false, vertical: true)
+                .multilineTextAlignment(.center)
+                .padding(.bottom)
+                .frame(width: 310, height: 100)
+                .background(Rectangle().fill(Color(hex: "#CDD7B6")))
+                .cornerRadius(15)
+                .shadow(radius:4)
                 
+                
+                .padding(40)
+  
+                
+                
+                Text("Free Write")
+                    .font(.title3)
+                    .fontWeight(.medium)
+                
+                    
+           
+                TextField("Thoughts...", text: $name, axis: .vertical)
+                    .padding(15)
+                    .background(Color(hex: "#CDD7B6"))
+                    .padding(.all, 7.0)
+                    .lineLimit(15, reservesSpace:true)
+                    .cornerRadius(50)
+                    .padding(.horizontal, 20)
+                
+                    
+                    Spacer()
+                
+                
+                  
+               
                 
                 HStack {
                     
-                    
-                    
-                    
+
             
                 } //Hstack
                 
-                
-                
-                
+
             } //vstack
+            .padding()
             
-            
-            
-            
+
         } //zstack
         
-        
-        
-        
-        
-        
+
     }
 }
 

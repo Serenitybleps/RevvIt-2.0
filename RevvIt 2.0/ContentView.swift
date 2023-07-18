@@ -8,14 +8,54 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var promptRandom = ""
+    
+        var prompts = ["prompt 1", "prompt 2", "prompt 3", "prompt 4", "prompt 5", "prompt 6"
+                    
+    ]
+
+    
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+       
+        ZStack {
+            
+            VStack {
+                
+                Text("Journal")
+                    .multilineTextAlignment(.leading)
+                
+                
+                
+                Button("New Prompt") {
+//                    var randomPrompt = Int.random (
+                    
+                }
+                
+                HStack {
+                    
+                    
+                    
+                    
+            
+                } //Hstack
+                
+                
+                
+                
+            } //vstack
+            
+            
+            
+            
+        } //zstack
+        
+        
+        
+        
+        
+        
     }
 }
 
